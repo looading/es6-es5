@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<title>es6</title>
+		<meta charset="utf-8">
+		<script>
+			var i = 0;
+			function render(msg) {
+				var tmp = '';
+				for(let a in msg){
+					tmp += a + " : " + msg[a] + " ,\n"
+				}
+				var html = '<pre>' + tmp + '</pre>';
+				document.body.innerHTML = document.body.innerHTML +  '-----------:code-line : ' + i + '\n' + html;
+			}
+		</script>
+		<script type="text/javascript" src="bundle.js"></script>
+	</head>
+	<body>
+		
+	</body>
+</html>
