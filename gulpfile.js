@@ -19,23 +19,24 @@ gulp.task('watch', () => {
 	gulp.watch('./src/*.js', ['es6-es5', 'browserify']).on('change', reload)
 	gulp.watch('./index.html').on('change', reload)
 })
-gulp.task('browserify', function() {
+
+gulp.task('browserify', () => {
 	return browserify({
 				debug : true
 			})
-			.add("./es6.js")
+			.add("./public/es6.js")
 			.bundle()
 			.pipe(source('bundle.js'))
 			.pipe(buffer())
-			.pipe(gulp.dest('./'))
+			.pipe(gulp.dest('./public'))
 })
-gulp.task('es6-es5', function() {
+gulp.task('es6-es5', () => {
 	return gulp.src('./src/*.js')
 		.pipe(babel({
 			presets: ['es2015', 'stage-3'],
 			plugins : ['transform-runtime']
 		}))
-		.pipe(gulp.dest('./'))
+		.pipe(gulp.dest('./public'))
 })
 
-gulp.task('default', [ 'create', 'watch' ])
+gulp.task('default', [ 'es6-es5', 'browserify', 'create', 'watch' ])

@@ -30,8 +30,12 @@
     "babel-preset-stage-3": "^6.5.0",
     "browser-sync": "^2.12.5",
     "browserify": "^13.0.0",
+    "co": "^4.6.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
+    "gulp-eslint": "^2.0.0",
+    "node-xlsx": "^0.7.1",
+    "thunkify": "^2.1.2",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
   }
