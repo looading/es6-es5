@@ -1,6 +1,6 @@
 {
 	"parser" : "babel-eslint",
 	"rules" : {
-	
+		comma-dangle: [1, 'always－multiline']   // 尾部加逗号
 	}
 }
